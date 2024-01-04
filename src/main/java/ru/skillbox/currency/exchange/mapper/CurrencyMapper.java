@@ -4,8 +4,10 @@ import org.mapstruct.DecoratedWith;
 import org.mapstruct.Mapper;
 import ru.skillbox.currency.exchange.dto.CurrencyDto;
 import ru.skillbox.currency.exchange.dto.CurrencyListResponse;
+import ru.skillbox.currency.exchange.dto.XmlCurrencyList;
 import ru.skillbox.currency.exchange.entity.Currency;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Mapper(componentModel = "spring")
@@ -21,5 +23,9 @@ public interface CurrencyMapper {
         CurrencyListResponse response = new CurrencyListResponse();
         response.setCurrencies(currencyListToResponseList(currencyList));
         return response;
+    }
+
+    default List<Currency> xmlCurrencyListToCurrencyList(XmlCurrencyList xmlCurrencyList) {
+        return new ArrayList<>();
     }
 }
