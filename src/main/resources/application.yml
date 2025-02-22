@@ -5,14 +5,19 @@ spring:
   liquibase:
     enabled: true
     drop-first: true
-    default-schema: public
+    default-schema: currency_sch
     change-log: classpath:db/changelog_init.xml
+    liquibase-schema: public
+  main:
+    banner-mode: off
 
   datasource:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5433/postgres
     username: postgres
     password: postgres
+    hikari:
+      schema: currency_sch
   jpa:
     properties:
       hibernate:

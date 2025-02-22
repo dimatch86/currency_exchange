@@ -6,7 +6,7 @@
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
 
     <changeSet id="add_iso_char_code" author="dimatch">
-        <addColumn schemaName= "public"
+        <addColumn
                    tableName="currency">
             <column name="iso_char_code"
                     type="varchar(50)">
